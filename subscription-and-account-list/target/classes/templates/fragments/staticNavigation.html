@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+  <meta charset="UTF-8" name=”viewport” content=”width=device-width, initial-scale=1″>
+  <LINK th:href="@{/css/mainPageStyle.css}" rel="stylesheet" type="text/css">
+
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <ul class="navbar-nav">
+    <nav class="menu">
+      <ol>
+        <!-- The reason for all of the pages having thymeleaf syntax is because thymeleaf will try and overrule other pages
+             making their link the new root-->
+        <li class="menu-item" ><a th:href="@{/homepage/{accountId}(accountId=${accountId})}">Home</a></li>
+        <li class="menu-item" ><a th:href="@{/about/{accountId}(accountId=${accountId})}">About</a></li>
+        <li class="menu-item" >
+          <a th:href="@{/shopping/{accountId}(accountId=${accountId})}"  class="nav-link dropdown-toggle"  id="navbardrop" data-toggle="dropdown">Shopping</a>
+          <ol class="sub-menu">
+            <li class="menu-item" ><a th:href="@{/mens/{accountId}(accountId=${accountId})}">Mens</a></li>
+            <li class="menu-item" ><a th:href="@{/womens/{accountId}(accountId=${accountId})}">Womens</a></li>
+            <li class="menu-item" ><a th:href="@{/kids/{accountId}(accountId=${accountId})}">Kids</a></li>
+          </ol>
+        </li>
+        <li class="menu-item"  >
+          <a th:href="@{/account/{accountId}(accountId=${accountId})}"  class="nav-link dropdown-toggle" data-toggle="dropdown">Account</a>
+          <ol class="sub-menu">
+            <li class="menu-item" ><a th:href="@{/basket/{accountId}(accountId=${accountId})}">Basket</a></li>
+            <li class="menu-item" ><a th:href="@{/wishlist/{accountId}(accountId=${accountId})}">Wishlist</a></li>
+            <li class="menu-item" ><a th:href="@{/accountsettings/{accountId}(accountId=${accountId})}">Account Settings</a></li>
+          </ol>
+        </li>
+        <li class="menu-item" ><a th:href="@{/contact}">Contact</a></li>
+      </ol>
+    </nav>
+  </ul>
+</nav>
+
+</body>
+</html>

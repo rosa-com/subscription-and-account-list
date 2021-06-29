@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+  <meta charset="UTF-8">
+
+  <title>Mens</title>
+
+  <!-- Be careful on the syntax for including files. Code below works with the use of path variable and related thymeleaf -->
+  <LINK th:href="@{/css/mainPageStyle.css}" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+<div class="row">
+
+
+  <div class="column left" >
+    <div th:replace="fragments/staticNavigation"></div>
+  </div>
+
+  <div class="column right">
+
+    <div id="mens">
+      <h1>Mens</h1>
+      <div class="gallery">
+        <a target="_blank" href="https://s7g10.scene7.com/is/image/UrbanOutfittersEU/0325451220004_001_d?$xlarge$&fit=constrain&fmt=webp&qlt=80&wid=720">
+          <img src="https://s7g10.scene7.com/is/image/UrbanOutfittersEU/0325451220004_001_d?$xlarge$&fit=constrain&fmt=webp&qlt=80&wid=720" alt="UO Converse Chuck Taylor All Star Black High Top Trainers" width="600" height="400">
+        </a>
+        <div class="desc">UO Converse Chuck Taylor All Star Black High Top Trainers</div>
+      </div>
+
+      <div class="gallery">
+        <a target="_blank" href="https://s7g10.scene7.com/is/image/UrbanOutfittersEU/0417652650339_001_b?$xlarge$&fit=constrain&fmt=webp&qlt=80&wid=720">
+          <img src="https://s7g10.scene7.com/is/image/UrbanOutfittersEU/0417652650339_001_b?$xlarge$&fit=constrain&fmt=webp&qlt=80&wid=720" alt="UO Urban Renewal Vintage Black Pro Sports T-Shirt" width="600" height="400">
+        </a>
+        <div class="desc">UO Urban Renewal Vintage Black Pro Sports T-Shirt</div>
+      </div>
+
+      <div class="gallery">
+        <a target="_blank" href="https://s7g10.scene7.com/is/image/UrbanOutfittersEU/0417652650166_041_b?$xlarge$&fit=constrain&fmt=webp&qlt=80&wid=720">
+          <img src="https://s7g10.scene7.com/is/image/UrbanOutfittersEU/0417652650166_041_b?$xlarge$&fit=constrain&fmt=webp&qlt=80&wid=720" alt="UO Urban Renewal Vintage Navy Pro Sports Sweatshirt" width="600" height="400">
+        </a>
+        <div class="desc">UO Urban Renewal Vintage Navy Pro Sports Sweatshirt</div>
+      </div>
+
+      <div class="gallery">
+        <a target="_blank" href="https://s7g10.scene7.com/is/image/UrbanOutfittersEU/0417652650275_060_b?$xlarge$&fit=constrain&fmt=webp&qlt=80&wid=720">
+          <img src="https://s7g10.scene7.com/is/image/UrbanOutfittersEU/0417652650275_060_b?$xlarge$&fit=constrain&fmt=webp&qlt=80&wid=720" alt="UO Urban Renewal Vintage Red Pro Sports Sweatshirt" width="600" height="400">
+        </a>
+        <div class="desc">UO Urban Renewal Vintage Red Pro Sports Sweatshirt</div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+  <div th:replace="fragments/popUpForm"></div>
+</footer>
+
+</body>
+</html>

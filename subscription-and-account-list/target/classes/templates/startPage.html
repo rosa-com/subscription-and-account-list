@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Start Page</title>
+    <meta charset="UTF-8">
+    <!-- For some reason when using thymeleaf and the /css file, it enlarges it. They are the same file. -->
+    <LINK th:href="@{/css/startPageStyle.css}" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<!--      Try to use the same processor. If it requires multiple classes and can use a list, do that
+          if not, then use thymeleaf for the whole line-->
+<!-- These don't need the path href because it is the starting page. The user information doesn't need to go to this page. -->
+<nav class="menu">
+    <ol>
+        <li class="menu-item" ><a href="homepage">Home</a></li>
+        <li class="menu-item" ><a href="about">About</a></li>
+        <li class="menu-item" >
+            <a href="shopping"  class="nav-link dropdown-toggle"  id="navbardrop" data-toggle="dropdown">Shopping</a>
+            <ol class="sub-menu">
+                <li class="menu-item" ><a href="mens">Mens</a></li>
+                <li class="menu-item" ><a href="womens">Womens</a></li>
+                <li class="menu-item" ><a href="kids">Kids</a></li>
+            </ol>
+        </li>
+        <li class="menu-item"  >
+            <a href="account"  class="nav-link dropdown-toggle" data-toggle="dropdown">Account</a>
+            <ol class="sub-menu">
+                <li class="menu-item" ><a href="basket">Basket</a></li>
+                <li class="menu-item" ><a href="wishlist">Wishlist</a></li>
+                <li class="menu-item" ><a href="accountsettings">Account Settings</a></li>
+            </ol>
+        </li>
+        <li class="menu-item" ><a href="contact">Contact</a></li>
+    </ol>
+</nav>
+
+
+<footer>
+    <div th:replace="fragments/popUpForm"></div>
+</footer>
+
+<script>
+    $(document).ready(function(){
+        // Initialize Tooltip
+        $('[data-toggle="tooltip"]').tooltip();
+
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 900, function(){
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            } // End if
+        });
+    })
+</script>
+
+</body>
+</html>

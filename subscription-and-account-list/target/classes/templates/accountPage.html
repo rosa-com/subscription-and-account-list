@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+  <meta charset="UTF-8">
+  <title>Account</title>
+  <LINK th:href="@{/css/mainPageStyle.css}" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+<div class="row">
+
+  <div class="column left" >
+    <div th:replace="fragments/staticNavigation"></div>
+  </div>
+
+  <div class="column right">
+
+    <div id="account">
+      <h1>Account</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel cursus mauris. Donec placerat laoreet arcu a venenatis. Duis ullamcorper enim nec eros imperdiet, quis ornare orci condimentum. Donec ornare felis ut orci pretium, vitae viverra justo tincidunt. Aliquam congue pulvinar sem, at condimentum ante vestibulum ut. Quisque sed consectetur dui. Suspendisse ullamcorper turpis sed tincidunt ullamcorper. Sed et augue mattis, finibus mi nec, efficitur tellus. Curabitur semper sapien id ante mollis, eget dignissim velit laoreet. In metus lectus, varius vel ipsum a, dictum porta tellus. Aliquam neque nibh, tempus sit amet feugiat ullamcorper, pulvinar id risus. Cras bibendum lobortis velit, ultricies pharetra ligula efficitur in. Aenean tincidunt, metus sit amet mattis mattis, velit turpis mattis lacus, in placerat lorem nisl ut dolor. Donec eget tempus mauris.
+        Vivamus facilisis, ipsum vitae euismod consectetur, felis velit eleifend magna, eu egestas arcu nulla at erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Etiam sed purus tincidunt, iaculis ipsum quis, semper odio. Praesent ac metus turpis. Morbi fringilla vel erat et malesuada. Cras tincidunt aliquet feugiat. Vivamus commodo enim vel odio rhoncus cursus.
+        Vivamus convallis ultrices diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In at imperdiet quam. Nulla eget lacus eget urna gravida mattis. Donec ultricies ante ut purus viverra laoreet. Vivamus auctor sapien sed sodales tempor. Phasellus at erat a ex sagittis dignissim in at est. Nam ut odio eget urna varius molestie. Curabitur vulputate porttitor tortor, vitae convallis tellus luctus non. Duis auctor nisi lacus, vel semper ex porttitor id. Sed congue lectus urna, et consequat lectus porttitor vitae. Nulla tempor libero ac justo tincidunt luctus. Morbi pharetra mi nibh, vel consectetur tellus mattis a. Quisque lacinia convallis justo et sagittis. Suspendisse placerat velit metus, vel consequat justo tincidunt vitae. Maecenas at orci euismod, finibus sem dignissim, sodales lorem.</p>
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+  <div th:replace="fragments/popUpForm"></div>
+</footer>
+
+<script>
+  $(document).ready(function(){
+    // Initialize Tooltip
+    $('[data-toggle="tooltip"]').tooltip();
+
+    // Add smooth scrolling to all links in navbar + footer link
+    $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+      // Make sure this.hash has a value before overriding default behavior
+      if (this.hash !== "") {
+
+        // Prevent default anchor click behavior
+        event.preventDefault();
+
+        // Store hash
+        var hash = this.hash;
+
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 900, function(){
+
+          // Add hash (#) to URL when done scrolling (default click behavior)
+          window.location.hash = hash;
+        });
+      } // End if
+    });
+  })
+</script>
+
+</body>
+</html>

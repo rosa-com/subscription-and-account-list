@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        html{
+            font-size: 12px;
+        }
+
+        .container {
+            background-color: #fff;
+            font-size: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        input {
+            background-color: #eee;
+            border: none;
+            padding: 12px 15px;
+            margin: 8px 0;
+            width: 100%;
+        }
+
+        button {
+            border: none;
+            background-color: #616161;
+            color: #FFFFFF;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 12px 45px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: transform 80ms ease-in;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        .open-button {
+            background-color: #616161;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            opacity: 0.8;
+            position: fixed;
+            bottom: 23px;
+            right: 28px;
+            width: 280px;
+        }
+
+        .form-popup {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            right: 15px;
+            z-index: 9;
+        }
+
+
+        .form-container {
+            max-width: 300px;
+            padding: 10px;
+            background-color: white;
+        }
+
+        .form-container input[type=text], .form-container input[type=password] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        .form-container .btn {
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        .form-container .cancel {
+            background-color: #ff4646;
+        }
+
+        .form-container .btn:hover, .open-button:hover {
+            opacity: 1;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<button class="open-button" onclick="openForm()">Log in/ Sign up</button>
+
+<div class="form-popup" id="myForm">
+
+    <div class="container" id="container">
+
+        <div class="form-container sign-up-container">
+
+            <div th:if="${account.email} == null">
+                <form method="post" action="#" th:action="@{/login}" th:object="${account}">
+                    <h1>Sign up or Sign in</h1>
+                    <input type="text" th:field="${account.firstname}" placeholder="Name"/>
+                    <input type="email" th:field="${account.email}" placeholder="Email"/>
+                    <input type="password" th:field="${account.password}" placeholder="Password"/>
+
+                    <div>
+                        <div style="width: 100%;">
+                            <div style="float: left; width: 130px">
+                                <button type="submit" th:name="action" th:value="signup" >Sign Up</button>
+                            </div>
+                            <div style="float: right; width: 130px">
+                                <button type="submit" th:name="action" th:value="signin" >Sign in</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div style="width: 100%;">
+                <div th:if="${account.email != null}">
+                    <b><p th:text="${loginMessage}"></p></b>
+                </div>
+            </div>
+
+            <div style="clear:both;"></div>
+            <br>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+
+        </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
+</script>
+
+</body>
+</html>

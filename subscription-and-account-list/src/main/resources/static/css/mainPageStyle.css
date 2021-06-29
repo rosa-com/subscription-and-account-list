@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+:root {
+    font-size:0.625em;
+}
+
+/*
+layout
+*/
+html,body {min-height:100vh}
+body {
+    display:flex;
+    flex-flow:column nowrap;
+    font: 1.6rem/1 'Raleway', serif;
+    /*
+    Below are the instructions to make the menu centre
+
+    justify-content:center;
+    align-items:center;
+    */
+}
+
+
+/*
+Counters
+*/
+
+.menu ol {
+    counter-reset:menu;
+}
+
+
+/*
+Regular menu items
+*/
+
+.menu-item a {
+    display:flex;
+    justify-content:flex-start; /*shrink towards text*/
+    color:currentColor;
+    text-decoration:none;
+    padding:0.3rem 0; /* avoid flicking' */
+    order:0;
+}
+
+.menu-item a::before { /* dots */
+    content:"";
+    display:block;
+    border-bottom:1px dotted black;
+    position:relative; top:-3px;
+    flex:1 1 auto;
+    margin:0 1rem;
+    order:1;
+}
+
+.menu-item a::after { /* item ids */
+    counter-increment:menu;
+    content:counters(menu, ".");
+    flex:0 0 auto;
+    order:2;
+    text-decoration:underline;
+}
+
+
+/*
+Fx
+*/
+
+.menu { transition:transform 0.3s; }
+
+.menu::before { transition:transform 0.5s; }
+.menu:hover::before { transform:rotate(0); content:"__"; }
+.menu::after { transition:transform 0.5s; }
+.menu:hover::after { transform:rotate(0); content:"__"; }
+
+.menu .menu-item a::after { transition:transform 0.3s }
+.menu:hover .menu-item a::after { transform:rotate(0) }
+
+.menu:hover > ol > .menu-item { opacity:0.3; }
+
+.menu-item:hover {
+    transition:background-color 0.3s;
+    background:rgba(255,255,0,0.15);
+    opacity:1 !important;
+}
+
+.menu-item:hover a::after {
+    text-decoration:none;
+}
+
+.menu-item:hover > a::before {
+    transition:flex-grow 0.3s;
+    width:0; flex-grow:0;
+    transform-origin:center bottom;
+}
+
+/*
+Collapse
+*/
+
+.sub-menu > .menu-item {
+    max-height:1ch;
+    transform:scaleY(0.1);
+    transform-origin:center top;
+    transition:transform 0.2s, max-height 0.5s;
+}
+
+.menu:hover .sub-menu .menu-item {
+    max-height:10em;
+    transform:scaleY(1);
+}
+
+
+
+/*
+Sub menu & items
+*/
+
+.sub-menu {
+    font-size:1.6rem;
+    font-weight:normal;
+}
+
+.sub-menu > li > a {
+    text-indent:0ch;
+    padding:0.5rem 0 0.5rem 2ch;
+    margin:0;
+}
+
+
+
+/*
+Main menu
+*/
+
+.menu {
+    width:22vw;
+    min-width:20ch;
+    display:flex;
+    flex-flow:column nowrap;
+    font:bold 2.4rem/1 'Raleway', serif;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 5%; /* Position the navbar at the top of the page */
+}
+
+.menu::before {
+    content:"/";
+    align-self:center;
+    margin-bottom:1rem;
+}
+
+.menu::after {
+    content:"/";
+    align-self:center;
+    margin-top:1rem;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+.column {
+    float: left;
+    padding: 5px;
+
+}
+
+.left {
+    width: 30%;
+}
+
+.right {
+    width: 70%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+@media screen and (max-width: 1160px) {
+    .column {
+        width: 100%;
+    }
+    .menu{
+        position: relative;
+        padding: 3%;
+        width: auto;
+    }
+}
+
+  div.gallery {
+      margin: 5px;
+      border: 1px solid #ccc;
+      float: left;
+      width: 180px;
+
+  }
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: right;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+  <meta charset="UTF-8">
+  <title>Kids</title>
+  <LINK th:href="@{/css/mainPageStyle.css}" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+<div class="row">
+
+  <div class="column left" >
+    <div th:replace="fragments/staticNavigation"></div>
+  </div>
+
+  <div class="column right">
+
+    <div id="kids">
+      <h1>Kids</h1>
+      <div class="gallery">
+        <a target="_blank" href="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/0d04e25d-1853-458e-8630-27aaf5ed6fa9/sky-jordan-1-and-shoe-qfVTfc.png">
+          <img src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/0d04e25d-1853-458e-8630-27aaf5ed6fa9/sky-jordan-1-and-shoe-qfVTfc.png" alt="Nike Sky Jordan 1" width="600" height="400">
+        </a>
+        <div class="desc">Nike Sky Jordan 1</div>
+      </div>
+
+      <div class="gallery">
+        <a target="_blank" href="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/1efa1345-050b-44d1-806b-8d906ab4889a/force-1-and-shoe-5ZVhf6.png">
+          <img src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/1efa1345-050b-44d1-806b-8d906ab4889a/force-1-and-shoe-5ZVhf6.png" alt="Nike Force 1" width="600" height="400">
+        </a>
+        <div class="desc">Nike Force 1</div>
+      </div>
+
+      <div class="gallery">
+        <a target="_blank" href="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,b_rgb:f5f5f5/cf83925d-51b5-4752-906d-c095cacc53b0/sportswear-tech-fleece-zip-hoodie-and-trousers-set-djBhRP.png">
+          <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,b_rgb:f5f5f5/cf83925d-51b5-4752-906d-c095cacc53b0/sportswear-tech-fleece-zip-hoodie-and-trousers-set-djBhRP.png" alt="Nike Sportswear Tech Fleece" width="600" height="400">
+        </a>
+        <div class="desc">Nike Sportswear Tech Fleece</div>
+      </div>
+
+      <div class="gallery">
+        <a target="_blank" href="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,b_rgb:f5f5f5/4b0e1632-e385-410f-8219-b862c6ff6384/sportswear-tech-fleece-zip-hoodie-and-trousers-set-Z1LGsf.png">
+          <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,b_rgb:f5f5f5/4b0e1632-e385-410f-8219-b862c6ff6384/sportswear-tech-fleece-zip-hoodie-and-trousers-set-Z1LGsf.png" alt="Nike Sportswear Tech Fleece" width="600" height="400">
+        </a>
+        <div class="desc">Nike Sportswear Tech Fleece</div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+  <div th:replace="fragments/popUpForm"></div>
+</footer>
+
+</body>
+</html>
