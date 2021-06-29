@@ -7,5 +7,7 @@ A *Spring Boot project* that:
 - has a contact page section
 - has verification implemented
 
+
+
 Image: ![image](https://user-images.githubusercontent.com/81621477/123842149-5e4cf680-d908-11eb-80bb-a156830d5d47.png)
 
