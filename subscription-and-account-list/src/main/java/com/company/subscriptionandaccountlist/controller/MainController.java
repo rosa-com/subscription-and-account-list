@@ -343,7 +343,7 @@ public class MainController {
 
             User save = userRepository.save(toSaveAccount);
 
-            //emailSender.send(account.getEmail(), "Hello " + account.getFirstname(), "Account made");
+            emailSender.send(account.getEmail(), "Hello " + account.getFirstname(), "Account made");
 
             model.addAttribute("accountId", save.getId());
             model.addAttribute("account", account);
